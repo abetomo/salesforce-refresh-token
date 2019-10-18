@@ -1,0 +1,30 @@
+{
+  "name": "salesforce-refresh-token",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "lint": "standard",
+    "server": "./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abetomo/salesforce-refresh-token.git"
+  },
+  "keywords": [
+    "salesforce",
+    "refresh_token"
+  ],
+  "author": "abetomo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abetomo/salesforce-refresh-token/issues"
+  },
+  "homepage": "https://github.com/abetomo/salesforce-refresh-token#readme",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1"
+  }
+}

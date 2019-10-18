@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
+    <title>Salesforce refresh_token </title>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <div class="field">
+          <label class="label">client_id</label>
+          <div class="control">
+            <input class="input" type="text" name="client_id" placeholder="client_id">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">client_secret</label>
+          <div class="control">
+            <input class="input" type="text" name="client_secret" placeholder="client_secret">
+          </div>
+        </div>
+
+        <button class="button is-fullwidth">refresh_token</button>
+      </div>
+    </section>
+    <script>
+const redirectUri = 'http://localhost:1234/'
+
+const clientId = sessionStorage.getItem('clientId')
+if (clientId != null && clientId.length > 0) {
+  document.getElementsByName('client_id')[0].value = clientId
+}
+const clientSecret = sessionStorage.getItem('clientSecret')
+if (clientSecret != null && clientSecret.length > 0) {
+  document.getElementsByName('client_secret')[0].value = clientSecret
+}
+
+const button = document.getElementsByClassName('button')[0]
+if (location.search.length > 0) {
+  document.getElementsByClassName('container')[0].innerText = 'Loading'
+  location.href = location.href + `&client_id=${encodeURIComponent(clientId)}&client_secret=${encodeURIComponent(clientSecret)}`
+}
+
+button.addEventListener(
+  'click',
+  () => {
+    const clientId = document.getElementsByName('client_id')[0].value
+    if (clientId.length > 0) {
+      sessionStorage.setItem('clientId', clientId)
+    }
+    const clientSecret = document.getElementsByName('client_secret')[0].value
+    if (clientSecret.length > 0) {
+      sessionStorage.setItem('clientSecret', clientSecret)
+    }
+
+    location.href = `https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=${encodeURIComponent(clientId)}&redirect_uri=${encodeURIComponent(redirectUri)}`
+  }
+)
+    </script>
+  </body>
+</html>
