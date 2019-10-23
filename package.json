@@ -1,7 +1,7 @@
 {
   "name": "salesforce-refresh-token",
   "version": "0.0.1",
-  "description": "",
+  "description": "Easily get Salesforce `refresh_token`",
   "scripts": {
     "lint": "standard",
     "server": "./index.js",
