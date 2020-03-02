@@ -29,7 +29,7 @@ Press `refresh_token`.
 
 #### Log in to Salesforce, check the permissions and allow.
 
-![salesforce-login.png](./docs/images/salesforce-login.png)
+<img alt="salesforce-login.png" src="./docs/images/salesforce-login.png" width="500px" />
 
 #### Get refresh_token
 
