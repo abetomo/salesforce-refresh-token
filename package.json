@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/abetomo/salesforce-refresh-token#readme",
   "dependencies": {
-    "request": "^2.88.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
-    "standard": "^14.3.1"
+    "standard": "^14.3.3"
   }
 }
